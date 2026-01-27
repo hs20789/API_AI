@@ -1,0 +1,36 @@
+# ================================
+# Python Virtual Environments
+# ================================
+# 로컬 개발용 가상환경 디렉토리 (플랫폼/개발자별로 다르므로 버전관리 제외)
+.venv-api-ai/
+venv-api-ai/
+
+
+# ================================
+# Python Bytecode & Cache
+# ================================
+# Python 인터프리터가 생성하는 캐시 파일 및 디렉토리
+__pycache__/
+*.pyc
+
+.vscode
+logs/
+*.log
+
+# ================================
+# Test & Tooling Cache
+# ================================
+# pytest 실행 시 생성되는 캐시 디렉토리
+.pytest_cache/
+
+
+# ================================
+# Build & Packaging Artifacts
+# ================================
+# 패키지 빌드 결과물 (wheel, sdist 등)
+build/
+dist
+
+# pip install / editable install 시 생성되는 패키지 메타데이터
+*.egg-info
+*.dist-info
