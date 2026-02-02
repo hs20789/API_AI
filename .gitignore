@@ -1,36 +1,220 @@
-# ================================
-# Python Virtual Environments
-# ================================
-# 로컬 개발용 가상환경 디렉토리 (플랫폼/개발자별로 다르므로 버전관리 제외)
-.venv-api-ai/
-venv-api-ai/
-
-
-# ================================
-# Python Bytecode & Cache
-# ================================
-# Python 인터프리터가 생성하는 캐시 파일 및 디렉토리
+# 바이트 컴파일 / 최적화 / DLL 파일
 __pycache__/
-*.pyc
+*.py[codz]
+*$py.class
 
-.vscode
-logs/
-*.log
+# C 확장 모듈
+*.so
 
-# ================================
-# Test & Tooling Cache
-# ================================
-# pytest 실행 시 생성되는 캐시 디렉토리
-.pytest_cache/
-
-
-# ================================
-# Build & Packaging Artifacts
-# ================================
-# 패키지 빌드 결과물 (wheel, sdist 등)
+# 배포 / 패키징
+.Python
 build/
-dist
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
-# pip install / editable install 시 생성되는 패키지 메타데이터
-*.egg-info
-*.dist-info
+# PyInstaller
+#   보통 이 파일들은 PyInstaller가 실행 파일(exe)을 빌드하기 전에 
+#   날짜나 기타 정보를 주입하기 위해 템플릿에서 Python 스크립트로 작성됩니다.
+*.manifest
+*.spec
+
+# 설치 프로그램 로그
+pip-log.txt
+pip-delete-this-directory.txt
+
+# 단위 테스트 / 커버리지(코드 분석) 보고서
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py.cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# 번역 파일
+*.mo
+*.pot
+
+# Django(장고) 관련:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask(플라스크) 관련:
+instance/
+.webassets-cache
+
+# Scrapy(스크래피) 관련:
+.scrapy
+
+# Sphinx 문서화 도구
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook(주피터 노트북)
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+#   라이브러리나 패키지의 경우, 코드가 여러 환경에서 실행되도록 의도된 경우 
+#   이 파일들을 무시할 수 있습니다. 그렇지 않다면 버전 관리에 포함(check in)하세요:
+# .python-version
+
+# pipenv
+#   pypa/pipenv#598에 따르면, Pipfile.lock은 버전 관리에 포함하는 것이 권장됩니다.
+#   그러나 협업 시 플랫폼별 종속성이 있거나 크로스 플랫폼 지원이 없는 경우, 
+#   pipenv가 작동하지 않는 종속성을 설치하거나 필요한 종속성을 설치하지 않을 수 있습니다.
+# Pipfile.lock
+
+# UV
+#   Pipfile.lock과 유사하게, uv.lock은 일반적으로 버전 관리에 포함하는 것이 좋습니다.
+#   바이너리 패키지의 재현성을 보장하기 위해 특히 권장되지만, 
+#   라이브러리의 경우에는 무시되기도 합니다.
+# uv.lock
+
+# poetry
+#   Pipfile.lock과 유사하게, poetry.lock은 일반적으로 버전 관리에 포함하는 것이 좋습니다.
+#   바이너리 패키지의 재현성을 보장하기 위해 특히 권장되지만, 
+#   라이브러리의 경우에는 무시되기도 합니다.
+#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
+# poetry.lock
+# poetry.toml
+
+# pdm
+#   Pipfile.lock과 유사하게, pdm.lock은 일반적으로 버전 관리에 포함하는 것이 좋습니다.
+#   pdm은 프로젝트 전체 구성을 pdm.toml에 포함하되, .pdm-python은 제외할 것을 권장합니다.
+#   https://pdm-project.org/en/latest/usage/project/#working-with-version-control
+# pdm.lock
+# pdm.toml
+.pdm-python
+.pdm-build/
+
+# pixi
+#   Pipfile.lock과 유사하게, pixi.lock은 일반적으로 버전 관리에 포함하는 것이 좋습니다.
+# pixi.lock
+#   Pixi는 venv 모듈이 .venv 디렉토리에 생성하는 것처럼 .pixi 디렉토리에 가상 환경을 생성합니다.
+#   이 디렉토리는 버전 관리에 포함하지 않는 것이 좋습니다.
+.pixi
+
+# PEP 582; 예: github.com/David-OConnor/pyflow 및 github.com/pdm-project/pdm 에서 사용됨
+__pypackages__/
+
+# Celery 관련
+celerybeat-schedule
+celerybeat.pid
+
+# Redis
+*.rdb
+*.aof
+*.pid
+
+# RabbitMQ
+mnesia/
+rabbitmq/
+rabbitmq-data/
+
+# ActiveMQ
+activemq-data/
+
+# SageMath 파싱된 파일
+*.sage.py
+
+# 가상 환경 (Virtual Environments)
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.venv-api-ai/
+
+# 비밀 설정 파일 (Secrets & Config)
+.env
+.envrc
+.env.local
+.env.*.local
+
+# Spyder 프로젝트 설정
+.spyderproject
+.spyproject
+
+# Rope 프로젝트 설정
+.ropeproject
+
+# mkdocs 문서
+/site
+
+# mypy (정적 타입 검사기)
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre 타입 검사기
+.pyre/
+
+# pytype 정적 타입 분석기
+.pytype/
+
+# Cython 디버그 심볼
+cython_debug/
+
+# PyCharm
+#   JetBrains 전용 템플릿은 별도의 JetBrains.gitignore 파일로 관리되며
+#   https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore 에서 찾을 수 있습니다.
+#   이를 글로벌 gitignore에 추가하거나 이 파일에 병합할 수 있습니다. 
+#   강력한 차단(권장하지 않음)을 원하시면 아래 주석을 해제하여 전체 .idea 폴더를 무시할 수 있습니다.
+# .idea/
+
+# Abstra
+#   Abstra는 AI 기반 프로세스 자동화 프레임워크입니다.
+#   사용자 자격 증명, 로컬 상태 및 설정을 포함하는 디렉토리는 무시하세요.
+#   더 알아보기: https://abstra.io/docs
+.abstra/
+
+# Visual Studio Code
+#   Visual Studio Code 전용 템플릿은 별도의 VisualStudioCode.gitignore 파일로 관리되며
+#   https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore 에서 찾을 수 있습니다.
+#   이를 글로벌 gitignore에 추가하거나 이 파일에 병합할 수 있습니다.
+#   하지만 원하신다면 아래 주석을 해제하여 전체 .vscode 폴더를 무시할 수도 있습니다.
+# .vscode/
+
+# Ruff 관련:
+.ruff_cache/
+
+# PyPI 설정 파일
+.pypirc
+
+# Marimo
+marimo/_static/
+marimo/_lsp/
+__marimo__/
+
+# Streamlit
+.streamlit/secrets.toml
