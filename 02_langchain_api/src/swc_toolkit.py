@@ -15,7 +15,7 @@ except ImportError:
 
 
 config = SWCConfig(backoff=False)
-local_swc_client = SWCClient(config=config)
+local_swc_client = SWCClient(config)
 
 
 class HealthCheckInput(BaseModel):
